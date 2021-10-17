@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const path = require('path')
 const User = require('./models/user');
 const env = require('dotenv')
+const seedDB =require('./seed')
 
 const methodOverride = require('method-override');
 
@@ -40,3 +41,5 @@ app.use(userRoute);
 app.listen(process.env.PORT||3000,()=>{
     console.log("Server running at port 3000");
 })
+
+seedDB();
