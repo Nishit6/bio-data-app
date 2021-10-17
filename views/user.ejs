@@ -1,0 +1,124 @@
+<%- include("./partials/header") %> 
+<%- include("./partials/nav") %> 
+
+<!-- <link rel="stylesheet" href="/css/userprofile.css"> -->
+<% for(let item of users) {%>
+<div id="userCard" class="container">
+  
+        <div class="main">
+      
+            <div class="row">
+                
+                <div class="col-md-4 mt-5">
+
+                   
+
+                   
+                    <div class="card text-center sidebar">
+                        <div class="card-body" >
+                            <div class="img-container">
+                                <% if(!item.profileImage){ %>
+                                    <img  src="https://bellfund.ca/wp-content/uploads/2018/03/demo-user.jpg" class="rounded-circle" width="265px">
+                                   <% }else { %>
+                                    <img src="<%= item.profileImage  %>" class="rounded-circle" width="265px">
+                                    <% } %>
+                            </div>
+                           
+                            <div class="mt-3">
+                                <h3><%= item.name  %></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+               
+                <div class="col-md-8 mt-5">
+                    <div class="card mb-3 content">
+                        <h1 class="m-3 pt-3">About</h1>
+                      
+                        <div class="card-body">
+                           
+                            <hr>
+                            
+                                <div  class="col-md-3">
+                                    <h5>Full name</h5>
+                                </div>
+                                <div id="h5" class="col-md-9 text-secondary">
+                                    <%= item.name  %>
+                                </div>
+                           
+                            
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5>Email</h5>
+                                </div>
+                                <div class="col-md-9 text-secondary">
+                                    <%= item.email %>
+                                </div>
+                               
+                            </div>
+                        
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5>Mobile number</h5>
+                                </div>
+                                <div class="col-md-9 text-secondary">
+                                    <%= item.phone %>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5>Age</h5>
+                                </div>
+                                <div class="col-md-9 text-secondary">
+                                    <%= item.age %>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5>Gender</h5>
+                                </div>
+                                <div class="col-md-9 text-secondary">
+                                    <%= item.gender %>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5>Address</h5>
+                                </div>
+                                <div class="col-md-9 text-secondary">
+                                    <%= item.address  %>
+                                </div>
+                                
+                            </div>
+                            <br>
+                            <form action="/user/<%= item._id %>/edit"  method="get">
+                                <button style="width: 100%;" type="submit" class="btn btn-outline-warning">Edit</button>
+                            </form>
+    
+                            <form class="validate-form"novalidate action="/user/<%= item.id %>?_method=DELETE " method="POST">
+                                <button style="width: 100%;" type="submit" class="btn btn-outline-danger">Delete</button>
+                            </form>
+                        </div>
+                        
+                        </div>
+                       
+                        
+                    </div>
+                    <%}%>
+               
+
+                    
+                   
+
+                   
+                   
+<%- include("./partials/header") %> 

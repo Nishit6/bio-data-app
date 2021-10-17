@@ -1,0 +1,130 @@
+<%- include("./partials/header") %> 
+<%- include("./partials/nav") %> 
+
+
+<div id="form-container" class="container mb-5">
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+            <form id="form"  class="needs-validation"  action="/new" novalidate method="post">
+                <h1 style="font-family: 'Scheherazade New', serif; text-shadow: 1px 2px 2px rgb(128, 128, 128);">Add Details</h1>
+                <hr>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" name="email"  aria-describedby="emailHelp" required>
+                  <div id="emailHelp" class="form-text">Enter your Email here</div>
+          <div class="valid-feedback">
+            Looks good!!
+          </div>
+          <div class="invalid-feedback">
+            Please fill the required field.
+          </div>
+                </div>
+            
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Name</label>
+                  <input type="text" class="form-control" name="name" id="exampleInputPassword1" required>
+              
+                  <div id="emailHelp" class="form-text">Enter your Name here</div>
+                  <div class="valid-feedback">
+                    Looks good!!
+                  </div>
+                  <div class="invalid-feedback">
+                    Please fill the required field.
+                  </div>
+                </div>
+            
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Phone</label>
+                    <input type="text" class="form-control" name="phone" id="exampleInputPassword1" required>
+                
+                    <div id="emailHelp" class="form-text">Enter your Phone Number here</div>
+                    <div class="valid-feedback">
+                      Looks good!!
+                    </div>
+                    <div class="invalid-feedback">
+                      Please fill the required field.
+                    </div>
+                  </div>
+            
+                
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Address</label>
+                    <input type="text" class="form-control" name="address" id="exampleInputPassword1" required>
+                    <div id="emailHelp" class="form-text">Enter your Address here</div>
+                    <div class="valid-feedback">
+                      Looks good!!
+                    </div>
+                    <div class="invalid-feedback">
+                      Please fill the required field.
+                    </div>
+                
+                  </div>
+            
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Age</label>
+                    <input type="text" class="form-control" name="age" id="exampleInputPassword1" required>
+                 
+                    <div id="emailHelp" class="form-text">Enter your Age here</div>
+                    <div class="valid-feedback">
+                      Looks good!!
+                    </div>
+                    <div class="invalid-feedback">
+                      Please fill the required field.
+                    </div>
+
+                  </div>
+            
+            
+                  <div class="mb-3">
+                   
+            
+                    <div class="mb-3">
+                        <label for="role" class="form-label">Gender </label>
+                        <select class="form-select inp" aria-label="Default select example" name="gender"required >
+                            <option selected>Choose ...</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                        <div class="valid-feedback">
+                          Looks good!!
+                        </div>
+                        <div class="invalid-feedback">
+                          Please fill the required field.
+                        </div>
+                  </div>
+            
+                
+            
+                <button type="submit" class="btn btn-primary">Add Profile</button>
+              </form>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+</div>
+
+
+<script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+</script>
+
+<%- include("./partials/footer") %> 
