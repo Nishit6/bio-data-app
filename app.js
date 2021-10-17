@@ -16,7 +16,7 @@ const userRoute = require('./routes/userRoute')
 
 
 // configuring mongoose
-mongoose.connect('mongodb://localhost:27017/bio-data', 
+mongoose.connect(process.env.DB_URL, 
 {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -42,4 +42,4 @@ app.listen(process.env.PORT||3000,()=>{
     console.log("Server running at port 3000");
 })
 
-seedDB();
+// seedDB();
