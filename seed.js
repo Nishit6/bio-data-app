@@ -12,7 +12,8 @@ const userArray = [
         age:21,
         address:'xyz',
         gender:'male',
-        phone:'7721869369'
+        phone:'7721869369',
+        email:'nishit@gmail.com'
     }
     
 ]
